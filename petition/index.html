@@ -1,0 +1,522 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BERKELEY AMEND – Campaign for Modern Nuclear Energy Policy</title>
+
+  <!-- Google Fonts: same as original (Roboto + Roboto Slab) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Palette lifted from the original site === */
+    :root{
+      --c0:#1a6c7a; /* accent (astglobalcolor0) */
+      --c1:#153243; /* primary text (astglobalcolor1/6/7) */
+      --c2:#000f2b; /* deep navy (astglobalcolor2) */
+      --c3:#3a3a3a; /* muted text (astglobalcolor3) */
+      --c4:#f3f9fb; /* light background (astglobalcolor4) */
+      --c5:#ffffff; /* white (astglobalcolor5) */
+      --ink:var(--c1);
+      --muted:var(--c3);
+      --accent:var(--c0);
+      --bg:var(--c5);
+      --max:1000px;
+    }
+
+    /* === Base === */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+    body{
+      font-family: "Roboto", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    h1,h2,h3{font-family:"Roboto Slab", Georgia, "Times New Roman", serif; line-height:1.2; margin:0 0 .5em;}
+    h1{font-weight:700; font-size:clamp(28px,4.2vw,40px); color:var(--c2);}
+    h2{font-weight:700; font-size:clamp(22px,3.4vw,30px); color:var(--c1);}
+    p,li{color:var(--ink);}
+    .muted{color:var(--muted);}
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%; height:auto; display:block;}
+
+    /* === Layout === */
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px;}
+    /* Primary container: mobile-first narrow centered column on larger screens */
+    #primary{
+      width:100%;
+      box-sizing:border-box;
+      padding:0 12px; /* small side padding on mobile */
+      margin:0 auto;
+    }
+    /* constrain width and center on larger viewports */
+    @media (min-width:720px){
+      /* widen primary slightly for medium screens */
+      #primary{max-width:820px;}
+    }
+    @media (min-width:1000px){
+      /* widen primary for large screens (approx +20%) */
+      #primary{max-width:1320px;}
+    }
+    /* Sticky background on the main content area (mobile-first) */
+    #content{
+      /* show the image with the translucent white overlay; keep it sticky where supported,
+         and size the image so its height matches the viewport */
+      background: linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86)), url("./Berkeley_cityscape.jpg") center center / auto 100vh no-repeat fixed;
+      padding-bottom: 48px; /* add breathing room above the footer */
+    }
+    /* On small screens, background-attachment:fixed is often ignored or
+       causes issues; let it scroll there but keep the image height fitting
+       the viewport so it still appears vertically fitted. */
+    @media (max-width:640px){
+      #content{ background-attachment:scroll; background-size: auto 100vh; }
+    }
+    header{padding:18px 0; border-bottom:1px solid #e6eaee; background:var(--c5);}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+    .brand-name{font:700 18px/1 "Roboto"; letter-spacing:.02em; color:var(--c1);}
+    .brand img{height:64px; width:auto;}
+
+    nav{background:var(--c5);}
+    .menu{display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center; list-style:none; margin:14px 0 0; padding:0;}
+    .menu a{display:inline-block; padding:7px 10px; border-radius:8px; color:var(--c1);}
+    .menu a.cta{background:var(--accent); color:#fff;}
+
+    .hero {
+      position: relative;
+      padding: 80px 20px; /* bigger padding so text breathes */
+      text-align: center;
+      color: #fff; /* make text light over the image */
+      background: url("./Berkeley_cityscape.jpg") center/cover no-repeat; /* replace with your filename */
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+      background: rgba(255, 255, 255, 0.60); /* black with 45% opacity — adjust to taste */
+      z-index: 0;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1; /* ensure text sits above the dim layer */
+    }
+    /* Title block: center horizontally and vertically, bold and larger */
+    #title{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:220px; /* adjust as needed to control vertical space */
+      padding:20px 12px; /* keep small side padding to match primary */
+      text-align:center;
+      background:transparent;
+      width:100%;
+      box-sizing:border-box;
+    }
+    #title_text{
+      font-weight:700;
+      font-size:clamp(24px,4.6vw,64px);
+      color:var(--c2);
+      line-height:1.1;
+      margin:0;
+      display:block;
+      width:100%;
+      max-width:100%;
+    }
+    /* Subtitle: centered, bold, slightly smaller than the title */
+    #subtitle{
+      display:flex;
+      justify-content:center; /* horizontal centering */
+      padding:6px 20px 18px; /* spacing beneath title */
+      text-align:center;
+    }
+    #subtitle_text{
+      font-weight:700;
+      /* slightly larger subtitle */
+      font-size:clamp(20px,3.8vw,34px);
+      color:var(--muted);
+      margin:0;
+      line-height:1.2;
+    }
+    /* Goals box: translucent grey background with padding and rounded corners */
+    #goals_box{
+      background: rgba(25,25,25,0.12); /* darker semi-transparent grey for contrast */
+      padding:18px 16px;
+      border-radius:10px;
+      margin:20px 0;
+    }
+    /* center goals title and make it slightly smaller than the subtitle */
+    #goals_title_box{display:flex; flex-direction:column; gap:12px; align-items:center; text-align:center;}
+    #goals_title_text{
+      font-weight:700;
+      /* increased to be more prominent */
+      font-size:clamp(20px,3.2vw,32px);
+      color:var(--c1);
+      margin:0;
+      text-align:center;
+    }
+    /* Goals grid: 2x2 responsive grid of square boxes */
+    #goals_grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      width:100%;
+      margin-top:8px;
+      align-items:stretch;
+    }
+    .goals_grid_item{
+      background: rgba(25,25,25,0.10); /* darker translucent grey for each box */
+      border-radius:8px;
+      padding:0 16px 12px; /* keep top mostly blank; content gets bottom padding */
+      /* switch to CSS grid so we can place title on the 1/3 dividing line */
+      display:grid;
+      grid-template-rows: 33% 1fr; /* top third blank area, title placed at bottom of first row */
+      gap:8px;
+      /* make boxes ~40% shorter than square: width/height = 5/3 -> height = 60% of width */
+      aspect-ratio: 5 / 3;
+      box-sizing:border-box;
+      position:relative;
+    }
+    .goals_grid_item_title{
+      font-weight:700;
+      /* increased so each box title stands out */
+      font-size:clamp(22px,3.4vw,30px);
+      text-align:center;
+      margin:0;
+      /* place the title on the dividing line: bottom of the first row */
+      align-self:end;
+      justify-self:center; /* center horizontally */
+      display:flex; align-items:center; justify-content:center; /* vertically center within the title row area */
+      padding-bottom:4px; /* small nudge so title sits visually on the line */
+    }
+    .goals_grid_item_text{
+      font-weight:400;
+      /* increased size for better readability across devices */
+      font-size:clamp(16px,2.6vw,18px);
+      text-align:left;
+      margin:0;
+      color:var(--muted);
+      align-self:start;
+      padding-top:6px;
+    }
+    @media (max-width:640px){
+      /* stack into single column on small screens; make boxes a bit taller (not strictly square)
+         but shorter than before: reduce min-height by ~40% */
+      #goals_grid{grid-template-columns:1fr;}
+      .goals_grid_item{
+        aspect-ratio: auto; /* allow natural height */
+        min-height: 132px; /* ~60% of previous 220px */
+      }
+    }
+    /* Petition progress styles */
+    #petition_progress_box{
+      background: rgba(25,25,25,0.12);
+      padding:18px 16px;
+      border-radius:10px;
+      margin:20px 0;
+    }
+    #petition_progress_title{
+      font-weight:700;
+      font-size:clamp(18px,2.6vw,28px);
+      margin-bottom:12px;
+      text-align:center;
+      color:var(--c2);
+    }
+    #petition_progress_inner{display:flex;flex-direction:column;gap:10px;align-items:center}
+    #petition_progress_bar{
+      width:100%;
+      height:18px;
+      background: rgba(0,0,0,0.06);
+      border-radius:999px;
+      overflow:hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    #petition_progress_fill{
+      width:0%;
+      height:100%;
+      background: linear-gradient(90deg,var(--accent), #1f8f9a);
+      transition: width 600ms ease-in-out;
+    }
+    #petition_progress_label{font-weight:700; font-size:clamp(14px,1.8vw,16px); color:var(--c1)}
+    @media (max-width:720px){#petition_progress_inner{align-items:stretch}}
+    .section{padding:26px 0;}
+    .divider{height:1px; background:#e5e7eb; margin:22px auto; max-width:560px;}
+
+    /* Join section: translucent grey grid with three boxes */
+    #join{
+      background: rgba(25,25,25,0.12);
+      padding:18px 16px;
+      border-radius:10px;
+      margin:20px 0;
+      text-align:center;
+    }
+    #join_title{
+      font-weight:700;
+      font-size:clamp(20px,3.0vw,32px);
+      margin-bottom:14px;
+      color:var(--c2);
+    }
+    #join_content{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      align-items:stretch;
+    }
+    .join_content_box{
+      background: rgba(25,25,25,0.10);
+      border-radius:8px;
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:80px;
+      box-sizing:border-box;
+      transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+      will-change: transform, box-shadow;
+    }
+    .join_content_text{
+      font-weight:700;
+      font-size:clamp(16px,2.4vw,20px);
+      color:var(--c1);
+      margin:0;
+      text-align:center;
+    }
+    /* Hover and focus styles for interactive affordance */
+    .join_content_box:hover,
+    .join_content_box:focus{
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      background: rgba(25,25,25,0.16);
+      cursor: pointer;
+      outline: none;
+    }
+    .join_content_box:focus{ /* keyboard focus ring for accessibility */
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12), 0 0 0 3px rgba(26,108,122,0.12);
+    }
+    @media (max-width:720px){
+      #join_content{grid-template-columns:1fr;}
+    }
+
+    /* Thank You section: matches other translucent content blocks */
+    #thank_you_box{
+      background: rgba(25,25,25,0.12);
+      padding:18px 16px;
+      border-radius:10px;
+      margin:20px 0;
+      text-align:center;
+    }
+    #thank_you_title{
+      font-weight:700;
+      font-size:clamp(18px,2.6vw,28px);
+      margin:0 0 8px 0;
+      color:var(--c2);
+    }
+    #thank_you_text{
+      font-size:clamp(16px,2.0vw,18px);
+      color:var(--muted);
+      margin:0;
+    }
+    #thank_you_image{
+      max-width:100%;
+      height:auto;
+      margin:14px 0;
+      border-radius:8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    /* Crop image height on larger screens (full width, no distortion) */
+    @media (min-width:720px){
+      #thank_you_image{
+        width:100%;
+        height:403px;
+        object-fit:cover;
+        object-position:center;
+      }
+    }
+    /* ActBlue-style donate button used in the Thank You section */
+    .actblue-button{
+      display:inline-block;
+      margin-top:14px;
+      padding:12px 20px;
+      background: linear-gradient(180deg,#2ca6ae,#1a6c7a);
+      color:#fff;
+      font-weight:700;
+      border-radius:10px;
+      text-decoration:none;
+      box-shadow: 0 8px 20px rgba(26,108,122,0.18);
+      transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms;
+    }
+    .actblue-button:hover,
+    .actblue-button:focus{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(26,108,122,0.22);
+      opacity:0.98;
+      outline: none;
+    }
+    .actblue-button:active{ transform: translateY(-2px); }
+
+    ol.list{padding-left:1.2em;}
+    ol.list li{margin:.4em 0;}
+
+    footer{border-top:1px solid #e6eaee; background:var(--c5);}
+    footer .wrap{font-size:14px; text-align:center;}
+
+    /* Small screens */
+    @media (max-width:640px){
+      .brand img{height:52px;}
+      .brand-name{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="wrap">
+      <a class="brand" href="./index.html" aria-label="Go to homepage">
+        <!-- IMAGE: use your local copy of the site logo -->
+        <img src="./index_files/cropped-cropped-Berkeley-Amend-Logo_4.25.2024.webp" alt="Berkeley Amend logo">
+        <span class="brand-name">BERKELEY AMEND</span>
+      </a>
+
+      <!-- Primary Nav -->
+      <nav aria-label="Primary">
+        <ul class="menu">
+          <!-- INTERNAL LINKS (resolved with BASE) -->
+          <li><a class="internal" href="./index.html">Home</a></li>
+          <li><a class="internal" href="./initiative.html">Initiative Title &amp; Summary</a></li>
+          <li><a class="internal" href="./current-law.html">Current Law</a></li>
+          <li><a class="internal" href="./proposed-law.html">Proposed Law</a></li>
+          <li><a class="internal" href="./faqs.html">FAQs</a></li>
+          <!-- <li><a class="internal" href="./educational-resources.html">Educational Resources</a></li> -->
+          <li><a class="internal" href="./funding.html">Funding</a></li>
+          <li><a class="internal cta" href="./contact.html">Contact &amp; Find Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="content" role="main">
+    <div id="primary">
+
+      <div id="title">
+        <div id="title_text">
+          The Campaign to Legalize Nuclear Progress in Berkeley
+        </div>
+      </div>
+
+      <div id="subtitle">
+        <div id="subtitle_text">
+          Student Run and Organized
+        </div>
+      </div>
+
+      <div id="goals_box">
+          <div id="goals_title_box">
+            <div id="goals_title_text">Goals</div>
+            <div id="goals_grid">
+              
+              <div class="goals_grid_item">
+                <div class="goals_grid_item_title">INNOVATION</div>
+                <p class="goals_grid_item_text">Bring back Berkeley’s leadership in clean energy and medcine research.</p>
+              </div>
+              <div class="goals_grid_item">
+                <div class="goals_grid_item_title">DECARBONIZATION</div>
+                <p class="goals_grid_item_text">Kick Fossil Fuels! the science proves that nuclear energy is our key to a clean future.</p>
+              </div>
+              <div class="goals_grid_item">
+                <div class="goals_grid_item_title">SAFETY</div>
+                <p class="goals_grid_item_text">Studies show that modern Nuclear is the safest way to produce reliable energy. Help us align Berkeley law with California’s climate goals.</p>
+              </div>
+              <div class="goals_grid_item">
+                <div class="goals_grid_item_title">EQUITY</div>
+                <p class="goals_grid_item_text">Nuclear allows for afforadable energy that is safe for all. Berkeley’s status as a Nuclear Free Zone stifles progress and harms our neighbors.</p>
+              </div>
+
+            </div>
+          </div>
+      </div>
+
+      <div id="join">
+        <div id="join_title">
+          Join Us
+        </div>
+        <div id="join_content">
+
+          <a class="join_content_box" href="./contact.html">
+            <div class="join_content_text">Volunteer</div>
+          </a>
+          <a class="join_content_box" href="https://secure.actblue.com/donate/amend-nuclear" target="_blank" rel="noopener noreferrer">
+            <div class="join_content_text">Donate</div>
+          </a>
+          <a class="join_content_box" href="https://forms.gle/bpfVZmp4nJTY5Trv9">
+            <div class="join_content_text">Order a Petition Packet</div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Petition progress -->
+      <div id="petition_progress_box">
+        <div id="petition_progress_title">Petition Progress</div>
+        <div id="petition_progress_inner">
+          <div id="petition_progress_bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="petition_progress_fill"></div>
+          </div>
+          <div id="petition_progress_label">
+            <span id="petition_count">600</span> / <span id="petition_target">3000</span> signatures
+          </div>
+        </div>
+      </div>
+
+        <!-- Thank You section -->
+        <div id="thank_you_box">
+          <div id="thank_you_title">Thank You to our Berkeley Neighbours</div>
+            <div id="thank_you_text">Your volunteer time and generous donations make this possible.</div>
+            <img id="thank_you_image" src="IMG-20251013-WA0004.jpg" alt="Berkeley Amend volunteer team" />
+            <a class="actblue-button" href="https://secure.actblue.com/donate/amend-nuclear" target="_blank" rel="noopener noreferrer" aria-label="Donate via ActBlue (opens in a new tab)">
+              Donate
+            </a>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p>
+        Paid for by
+        <u><a class="internal" href="./funding.html">
+          Committee for the Initiative to Amend the Nuclear Free Berkeley Act
+        </a></u><br>
+        FPPC Committee ID – <a href="https://public.netfile.com/pub2/?aid=BRK" rel="noopener">1483734</a> (Not Yet Qualified)<br>
+        <a href="mailto:petition@niceucb.com">petition@niceucb.com</a>
+        <!--<a href="mailto:petition@berkeleyamend.com">petition@berkeleyamend.com</a>-->
+      </p>
+
+      <!-- Optional external social link (kept external as requested)
+      <p><a href="https://twitter.com/BerkeleyAmend" rel="noopener">Twitter/X</a></p>
+      -->
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      // Change only CURRENT_SIGNATURES to update the progress bar & label
+      const CURRENT_SIGNATURES = 600; // <-- change this number to update UI
+      const TARGET_SIGNATURES = 3000;
+      const pct = Math.min(100, Math.round(CURRENT_SIGNATURES / TARGET_SIGNATURES * 10000) / 100);
+      const fill = document.getElementById('petition_progress_fill');
+      const bar = document.getElementById('petition_progress_bar');
+      const count = document.getElementById('petition_count');
+      const target = document.getElementById('petition_target');
+      if(fill) fill.style.width = pct + '%';
+      if(bar) bar.setAttribute('aria-valuenow', String(pct));
+      if(count) count.textContent = CURRENT_SIGNATURES.toLocaleString();
+      if(target) target.textContent = TARGET_SIGNATURES.toLocaleString();
+    })();
+  </script>
+
+</body>
+</html>

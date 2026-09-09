@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BERKELEY AMEND – Campaign for Modern Nuclear Energy Policy</title>
+
+  <!-- Google Fonts: same as original (Roboto + Roboto Slab) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Palette lifted from the original site === */
+    :root{
+      --c0:#1a6c7a; /* accent (astglobalcolor0) */
+      --c1:#153243; /* primary text (astglobalcolor1/6/7) */
+      --c2:#000f2b; /* deep navy (astglobalcolor2) */
+      --c3:#3a3a3a; /* muted text (astglobalcolor3) */
+      --c4:#f3f9fb; /* light background (astglobalcolor4) */
+      --c5:#ffffff; /* white (astglobalcolor5) */
+      --ink:var(--c1);
+      --muted:var(--c3);
+      --accent:var(--c0);
+      --bg:var(--c5);
+      --max:1000px;
+    }
+
+    /* === Base === */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;   /* default */
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0 auto;       /* center horizontally if body has max-width */
+      max-width: 1000px;    /* keep content from spanning the entire screen */
+      text-align: justify;  /* justify text edges */
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1,h2,h3{font-family:"Roboto Slab", Georgia, "Times New Roman", serif; line-height:1.2; margin:0 0 .5em;}
+    h1{font-weight:700; font-size:clamp(28px,4.2vw,40px); color:var(--c2);}
+    h2{font-weight:700; font-size:clamp(22px,3.4vw,30px); color:var(--c1);}
+    p,li{color:var(--ink);}
+    .muted{color:var(--muted);}
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%; height:auto; display:block;}
+
+    /* === Layout === */
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px;}
+    header{padding:18px 0; border-bottom:1px solid #e6eaee; background:var(--c5);}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+    .brand-name{font:700 18px/1 "Roboto"; letter-spacing:.02em; color:var(--c1);}
+    .brand img{height:64px; width:auto;}
+
+    nav{background:var(--c5);}
+    .menu{display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center; list-style:none; margin:14px 0 0; padding:0;}
+    .menu a{display:inline-block; padding:7px 10px; border-radius:8px; color:var(--c1);}
+    .menu a.cta{background:var(--accent); color:#fff;}
+
+    .hero {
+      position: relative;
+      padding: 80px 20px; /* bigger padding so text breathes */
+      text-align: center;
+      color: #fff; /* make text light over the image */
+      background: url("./index_files/Berkeley_cityscape.jpg") center/cover no-repeat; /* replace with your filename */
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+      background: rgba(255, 255, 255, 0.60); /* black with 45% opacity — adjust to taste */
+      z-index: 0;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1; /* ensure text sits above the dim layer */
+    }
+    .section{padding:26px 0;}
+    .divider{height:1px; background:#e5e7eb; margin:22px auto; max-width:560px;}
+
+    ol.list{padding-left:1.2em;}
+    ol.list li{margin:.4em 0;}
+
+    footer{border-top:1px solid #e6eaee; background:var(--c5);}
+    footer .wrap{font-size:14px; text-align:center;}
+
+    /* Small screens */
+    @media (max-width:640px){
+      .brand img{height:52px;}
+      .brand-name{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="wrap">
+      <a class="brand" href="./index.html" aria-label="Go to homepage">
+        <!-- IMAGE: use your local copy of the site logo -->
+        <img src="./index_files/cropped-cropped-Berkeley-Amend-Logo_4.25.2024.webp" alt="Berkeley Amend logo">
+        <span class="brand-name">BERKELEY AMEND</span>
+      </a>
+
+      <!-- Primary Nav -->
+      <nav aria-label="Primary">
+        <ul class="menu">
+          <!-- INTERNAL LINKS (resolved with BASE) -->
+          <li><a class="internal" href="./index.html">Home</a></li>
+          <li><a class="internal" href="./initiative.html">Initiative Title &amp; Summary</a></li>
+          <li><a class="internal" href="./current-law.html">Current Law</a></li>
+          <li><a class="internal" href="./proposed-law.html">Proposed Law</a></li>
+          <li><a class="internal" href="./faqs.html">FAQs</a></li>
+          <!-- <li><a class="internal" href="./educational-resources.html">Educational Resources</a></li> -->
+          <li><a class="internal" href="./funding.html">Funding</a></li>
+          <li><a class="internal cta" href="./contact.html">Contact &amp; Find Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="content" role="main">
+    <div class="wrap" style="background-color:var(--c4);">
+      <p>Per City of Berkeley elections law, and as part of the petition process, an objective “Title and Summary” is provided by the City Attorney.</p>
+      <p>The following title and summary is the <strong>same</strong> that can be found on the physical petition.</p>
+      <p><strong>Title:</strong></p>
+      INITIATIVE TO AMEND THE NUCLEAR FREE BERKELEY ACT (BERKELEY MUNICIPAL CODE CHAPTER 12.90)
+      <p><strong>Summary:</strong></p>
+
+      <i>
+      Per City of Berkeley elections law, and as part of the petition process, an objective “Title and Summary” is provided by the City Attorney.<br>
+      The following title and summary is the same that can be found on the physical petition.<br>
+      Title:<br>
+      INITIATIVE TO AMEND THE NUCLEAR FREE BERKELEY ACT<br>
+      (BERKELEY MUNICIPAL CODE CHAPTER 12.90)<br><br>
+
+      This initiative, if adopted, would retitle the Nuclear Free Berkeley Act (the “Act”), Chapter 12.90 of the Municipal Code, to the “Nuclear Energy and Prohibition of Nuclear Weapons Act,” and would amend the Act in several ways.<br><br>
+
+      First, while the initiative would continue to prohibit the City from knowingly developing, testing, producing, maintaining, researching, or storing nuclear weapons or their components, it would repeal provisions that prohibit private individuals, entities, laboratories and universities from engaging in such work.  The initiative would also change current law to remove prohibitions on the construction or operation of nuclear reactors in the City, and to allow for the use of radioactive material for purposes other than nuclear weapons such as nuclear medicine, nuclear energy, non-proliferation research, and consumer uses such as smoke detectors and clocks.<br><br>
+
+      Second, the initiative would limit the prohibition on the City’s investing in or contracting with entities that work on nuclear weapons by prohibiting investments only where an entity works on nuclear weapons as its primary purpose and by prohibiting contracts only where nuclear weapons are a substantial part of an entity’s economic activity.  The initiative would also change current law to allow the City to enter into contracts with and make investments in the Lawrence Berkeley National Laboratory and the University of California at Berkeley, so long as those entities do not work on nuclear weapons.  Under this revised set of provisions, the City would be permitted to hire scientists and consultants for planning, energy and other purposes so long as those individuals’ primary work is not for nuclear weapons.<br><br>
+
+      Third, the initiative would repeal provisions prohibiting facilities within the City from irradiating food using radioactive isotopes and requiring the labeling of food sold within the City as having been “treated with ionizing radiation.”<br><br>
+
+      Fourth, the initiative would repeal the Act’s annual reporting requirement, cease-and-desist notification process, and fee schedule, and would provide for removal of signs marking the City limits as a “Nuclear Free Zone.”  The City would be required to save at least one sign to donate to the Berkeley Historical Society and Museum.<br><br>
+
+      Fifth, the initiative would repeal local rules about the transportation of radioactive material and replace them with federal regulations.  The initiative would also add provisions requiring the Fire Department to provide proper equipment for transporting radioactive material or else to assist partner agencies with any transportation-related needs.<br><br>
+
+      Sixth, the initiative would remove the provision providing for an express penalty of up to 30 days’ imprisonment and a five hundred dollar fine for violations of the Act.  Residents would retain the right to obtain injunctive or declaratory relief in a court proceeding for any violations of the Act, as well as to recover attorneys’ fees if they prevailed.<br><br>
+      </i>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p>
+        Paid for by
+        <u><a class="internal" href="./funding.html">
+          Committee for the Initiative to Amend the Nuclear Free Berkeley Act
+        </a></u><br>
+        FPPC Committee ID – <a href="https://public.netfile.com/pub2/?aid=BRK" rel="noopener">1483734</a> (Not Yet Qualified)<br>
+        <a href="mailto:petition@niceucb.com">petition@niceucb.com</a>
+        <!--<a href="mailto:petition@berkeleyamend.com">petition@berkeleyamend.com</a>-->
+      </p>
+
+      <!-- Optional external social link (kept external as requested)
+      <p><a href="https://twitter.com/BerkeleyAmend" rel="noopener">Twitter/X</a></p>
+      -->
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BERKELEY AMEND – Campaign for Modern Nuclear Energy Policy</title>
+
+  <!-- Google Fonts: same as original (Roboto + Roboto Slab) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Palette lifted from the original site === */
+    :root{
+      --c0:#1a6c7a; /* accent (astglobalcolor0) */
+      --c1:#153243; /* primary text (astglobalcolor1/6/7) */
+      --c2:#000f2b; /* deep navy (astglobalcolor2) */
+      --c3:#3a3a3a; /* muted text (astglobalcolor3) */
+      --c4:#f3f9fb; /* light background (astglobalcolor4) */
+      --c5:#ffffff; /* white (astglobalcolor5) */
+      --ink:var(--c1);
+      --muted:var(--c3);
+      --accent:var(--c0);
+      --bg:var(--c5);
+      --max:1000px;
+    }
+
+    /* === Base === */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;   /* default */
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0 auto;       /* center horizontally if body has max-width */
+      max-width: 1000px;    /* keep content from spanning the entire screen */
+      text-align: justify;  /* justify text edges */
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1,h2,h3{font-family:"Roboto Slab", Georgia, "Times New Roman", serif; line-height:1.2; margin:0 0 .5em;}
+    h1{font-weight:700; font-size:clamp(28px,4.2vw,40px); color:var(--c2);}
+    h2{font-weight:700; font-size:clamp(22px,3.4vw,30px); color:var(--c1);}
+    p,li{color:var(--ink);}
+    .muted{color:var(--muted);}
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%; height:auto; display:block;}
+
+    /* === Layout === */
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px;}
+    header{padding:18px 0; border-bottom:1px solid #e6eaee; background:var(--c5);}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+    .brand-name{font:700 18px/1 "Roboto"; letter-spacing:.02em; color:var(--c1);}
+    .brand img{height:64px; width:auto;}
+
+    nav{background:var(--c5);}
+    .menu{display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center; list-style:none; margin:14px 0 0; padding:0;}
+    .menu a{display:inline-block; padding:7px 10px; border-radius:8px; color:var(--c1);}
+    .menu a.cta{background:var(--accent); color:#fff;}
+
+    .hero {
+      position: relative;
+      padding: 80px 20px; /* bigger padding so text breathes */
+      text-align: center;
+      color: #fff; /* make text light over the image */
+      background: url("./index_files/Berkeley_cityscape.jpg") center/cover no-repeat; /* replace with your filename */
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+      background: rgba(255, 255, 255, 0.60); /* black with 45% opacity — adjust to taste */
+      z-index: 0;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1; /* ensure text sits above the dim layer */
+    }
+    .section{padding:26px 0;}
+    .divider{height:1px; background:#e5e7eb; margin:22px auto; max-width:560px;}
+
+    ol.list{padding-left:1.2em;}
+    ol.list li{margin:.4em 0;}
+
+    footer{border-top:1px solid #e6eaee; background:var(--c5);}
+    footer .wrap{font-size:14px; text-align:center;}
+
+    /* Small screens */
+    @media (max-width:640px){
+      .brand img{height:52px;}
+      .brand-name{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="wrap">
+      <a class="brand" href="./index.html" aria-label="Go to homepage">
+        <!-- IMAGE: use your local copy of the site logo -->
+        <img src="./index_files/cropped-cropped-Berkeley-Amend-Logo_4.25.2024.webp" alt="Berkeley Amend logo">
+        <span class="brand-name">BERKELEY AMEND</span>
+      </a>
+
+      <!-- Primary Nav -->
+      <nav aria-label="Primary">
+        <ul class="menu">
+          <!-- INTERNAL LINKS (resolved with BASE) -->
+          <li><a class="internal" href="./index.html">Home</a></li>
+          <li><a class="internal" href="./initiative.html">Initiative Title &amp; Summary</a></li>
+          <li><a class="internal" href="./current-law.html">Current Law</a></li>
+          <li><a class="internal" href="./proposed-law.html">Proposed Law</a></li>
+          <li><a class="internal" href="./faqs.html">FAQs</a></li>
+          <!-- <li><a class="internal" href="./educational-resources.html">Educational Resources</a></li> -->
+          <li><a class="internal" href="./funding.html">Funding</a></li>
+          <li><a class="internal cta" href="./contact.html">Contact &amp; Find Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="content" role="main">
+    <div class="wrap" style="background-color:var(--c4);">
+        <h1 style="text-align: center;">Frequently Asked Questions</h1>
+
+        <strong>What is the Nuclear Free Berkeley Act?</strong>
+
+        <p>An ordinance passed in 1986 by Berkeley voters principally to oppose the nuclear arms race while also opposing all forms of nuclear energy through City-level policy. While the law does exempt medicine and consumer-based uses of nuclear technology, the law is generally hostile to all forms of nuclear energy and the nuclear fuel cycle, mostly civilian nuclear energy.</p>
+
+        <strong>Why are you proposing to change it?</strong>
+
+        <p>The current law was passed at the height of the cold war and the nuclear weapons arms race between the United States and the Soviet Union. Much has changed in those 40 years including public sentiment shifting in support of nuclear energy. The current ordinance is outdated 20th century ideology towards peaceful nuclear energy. Berkeley must evolve.</p>
+
+        <p>The law costs Berkeley time and money with little in return. Many parts of the current law evoke fear and are emotionally-charged such as section <a href="./current-law.html">12.90.030 – Findings</a>.  Signs designating the City as a Nuclear Free Zone and marking the entrance to our City are emblazed with the radiation hazard symbol which is misleading imagery and frankly a terrible way to welcome visitors. We want to modernize the law to change the perception surrounding nuclear technology and applications, while preserving Berkeley’s strong and moral opposition towards nuclear weapons.</p>
+
+        <strong>What are the proposed changes?</strong>
+
+        <p>Proposed changes include:</p>
+        <ul>
+        <li>Name revision to “Nuclear Energy and Prohibition of Nuclear Weapons Act”</li>
+        <li>
+            Repeals provisions that previously banned private individuals, entities, labs, and universities from engaging in nuclear weapons work. 
+            <strong>Note:</strong> This repeal item likely removes a conflict between federal war powers (US Constitution) and the existing local provision. 
+            Most nuclear free zone laws do not even include this provision that would be removed.
+        </li>
+        <li>
+            Removes prohibitions on the construction of nuclear reactors and food safety irradiation facilities. 
+            <strong>Note:</strong> We are agnostic on the building of new civilian or research reactors within City jurisdiction.
+        </li>
+        <li>Changes the law so the City can invest in US Treasury Bonds and Securities.</li>
+        <li>
+            Removes provisions regarding labeling irradiated food sold in Berkeley and the construction of food safety irradiation facilities. 
+            <strong>Note:</strong> According to the CDC, all food treated with radiation must display the Radura symbol.
+        </li>
+        <li>
+            Removes the signs that mark the City as a Nuclear Free Zone. 
+            A removed sign would be donated to the Berkeley Historical Society.
+        </li>
+        <li>
+            Repeals rules regarding transportation of radioactive material and replaces them with federal regulations. 
+            <strong>Note:</strong> Federal regulations likely supersede the current local law.
+        </li>
+        <li>
+            Adds measures for local emergency response preparedness for an incident involving the transportation of nuclear material. 
+            Preparedness is good! We understand that BFD currently maintains some radiation hazard response equipment.
+        </li>
+        <li>
+            Removes provision on jail imprisonment and fines for violations of the act. 
+            <strong>Note:</strong> It is unclear if this provision has ever been exercised in the near 40-year history of this law.
+        </li>
+        </ul>
+<!--
+Name revision to “Nuclear Energy and Prohibition of Nuclear Weapons Act”
+    Repeals provisions that previously banned private individuals, entities, labs, and universities from engaging in nuclear weapons work. **Note** This repeal item likely removes a conflict between federal war powers (US constitution) and the existing local provision. Most nuclear free zone laws do not even include this provision that would be removed.
+    Removes prohibitions on the construction of nuclear reactors and food safety irradiation facilities. **Note** We are agnostic on the building new civilian or research reactors in within City jurisdiction.
+    Changes the law so the City can invest in US Treasury Bonds and Securities.
+    Removes provisions regarding labeling irradiated food sold in Berkeley and the construction of food safety irradiation facilities. **Note** According to the CDC, all food treated with radiation must display the Radura symbol.
+    Removes the signs that mark the City as a Nuclear Free Zone. A removed sign would be donated to the Berkeley Historical Society.
+    Repeals rules regarding transportation of radioactive material and replace them with federal regulations. **Note** Federal regulations likely supersede the current local law.
+    Adds measures for local emergency response preparedness for an incident involving the transportation of nuclear material. Preparedness is good! We understand that BFD currently maintains some radiation hazard response equipment.
+    Removes provision on jail imprisonment and fines for violations of the act. **Note** It is unclear if this provision has ever been exercised in the near 40 year history of this law.
+Are you campaigning that nuclear reactors be built in Berkeley?
+-->
+
+        <p>We are not advocating one way or another for the construction of nuclear reactors in Berkeley. While we do believe new civilian nuclear reactors should be built in the United States and California, new civilian nuclear energy reactors in a dense city such as Berkeley, which is already struggling to build affordable housing for its residents, students, and those most vulnerable, is probably not appropriate.</p>
+<!--
+        <strong>Why are prohibitions being removed that ban businesses that engage is weapons work?</strong>
+
+        <p>The current law is largely symbolic, and likely unenforceable. Nuclear weapons work is consolidated to federal labs or administered through federal contracts, which falls under federal law. This repeal likely removes a conflict between federal war powers laws (federal constitution) and the existing local provision. Most nuclear free zone laws, and non-nuclear free zone cities adjacent to Berkeley, like Albany, Emeryville, and Richmond do not even have provisions in their Code like this. </p>
+-->
+        <strong>Why are prohibitions being removed that ban food safety irradiation facilities?</strong>
+
+        <p>Food safety irradiation has been the recipient of much misinformation in the past 50 years. Though different in size and purpose, food irradiation facilities are very similar to medical imaging and treatment devices found in hospitals. The Food and Drug Administration (FDA), World Health Organization (WHO), the Centers for Disease Control and Prevention (CDC) and the U.S. Department of Agriculture (USDA) have endorsed the safety of irradiated food and its importance.</p>
+
+        <strong>Why are prohibitions being changed for transportation of nuclear materials?</strong>
+
+        <p>Federal and state law governs how civilian nuclear material is transported; these are the regulations that are currently followed for the movement of these materials through Berkeley today. The transportation of nuclear weapons material falls under federal constitution laws and therefore the current law is likely unenforceable with regard to that matter. </p>
+
+        <strong>Why are monetary fine and jail penalty provisions being removed?</strong>
+
+        <p>It is unclear whether these penalties have ever been assessed in the history of the Nuclear Free Berkeley Act. They are largely symbolic and again many provisions of the law are currently unenforceable given federal laws.</p>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p>
+        Paid for by
+        <u><a class="internal" href="./funding.html">
+          Committee for the Initiative to Amend the Nuclear Free Berkeley Act
+        </a></u><br>
+        FPPC Committee ID – <a href="https://public.netfile.com/pub2/?aid=BRK" rel="noopener">1483734</a> (Not Yet Qualified)<br>
+        <a href="mailto:petition@niceucb.com">petition@niceucb.com</a>
+        <!--<a href="mailto:petition@berkeleyamend.com">petition@berkeleyamend.com</a>-->
+      </p>
+
+      <!-- Optional external social link (kept external as requested)
+      <p><a href="https://twitter.com/BerkeleyAmend" rel="noopener">Twitter/X</a></p>
+      -->
+    </div>
+  </footer>
+
+</body>
+</html>

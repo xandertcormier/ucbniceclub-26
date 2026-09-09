@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BERKELEY AMEND – Campaign for Modern Nuclear Energy Policy</title>
+
+  <!-- Google Fonts: same as original (Roboto + Roboto Slab) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Palette lifted from the original site === */
+    :root{
+      --c0:#1a6c7a; /* accent (astglobalcolor0) */
+      --c1:#153243; /* primary text (astglobalcolor1/6/7) */
+      --c2:#000f2b; /* deep navy (astglobalcolor2) */
+      --c3:#3a3a3a; /* muted text (astglobalcolor3) */
+      --c4:#f3f9fb; /* light background (astglobalcolor4) */
+      --c5:#ffffff; /* white (astglobalcolor5) */
+      --ink:var(--c1);
+      --muted:var(--c3);
+      --accent:var(--c0);
+      --bg:var(--c5);
+      --max:1000px;
+    }
+
+    /* === Base === */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;   /* default */
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0 auto;       /* center horizontally if body has max-width */
+      max-width: 1000px;    /* keep content from spanning the entire screen */
+      text-align: justify;  /* justify text edges */
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1,h2,h3{font-family:"Roboto Slab", Georgia, "Times New Roman", serif; line-height:1.2; margin:0 0 .5em;}
+    h1{font-weight:700; font-size:clamp(28px,4.2vw,40px); color:var(--c2);}
+    h2{font-weight:700; font-size:clamp(22px,3.4vw,30px); color:var(--c1);}
+    p,li{color:var(--ink);}
+    .muted{color:var(--muted);}
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%; height:auto; display:block;}
+
+    /* === Layout === */
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px;}
+    header{padding:18px 0; border-bottom:1px solid #e6eaee; background:var(--c5);}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+    .brand-name{font:700 18px/1 "Roboto"; letter-spacing:.02em; color:var(--c1);}
+    .brand img{height:64px; width:auto;}
+
+    nav{background:var(--c5);}
+    .menu{display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center; list-style:none; margin:14px 0 0; padding:0;}
+    .menu a{display:inline-block; padding:7px 10px; border-radius:8px; color:var(--c1);}
+    .menu a.cta{background:var(--accent); color:#fff;}
+
+    .hero {
+      position: relative;
+      padding: 80px 20px; /* bigger padding so text breathes */
+      text-align: center;
+      color: #fff; /* make text light over the image */
+      background: url("./index_files/Berkeley_cityscape.jpg") center/cover no-repeat; /* replace with your filename */
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+      background: rgba(255, 255, 255, 0.60); /* black with 45% opacity — adjust to taste */
+      z-index: 0;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1; /* ensure text sits above the dim layer */
+    }
+    .section{padding:26px 0;}
+    .divider{height:1px; background:#e5e7eb; margin:22px auto; max-width:560px;}
+
+    ol.list{padding-left:1.2em;}
+    ol.list li{margin:.4em 0;}
+
+    footer{border-top:1px solid #e6eaee; background:var(--c5);}
+    footer .wrap{font-size:14px; text-align:center;}
+
+    /* Small screens */
+    @media (max-width:640px){
+      .brand img{height:52px;}
+      .brand-name{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="wrap">
+      <a class="brand" href="./index.html" aria-label="Go to homepage">
+        <!-- IMAGE: use your local copy of the site logo -->
+        <img src="./index_files/cropped-cropped-Berkeley-Amend-Logo_4.25.2024.webp" alt="Berkeley Amend logo">
+        <span class="brand-name">BERKELEY AMEND</span>
+      </a>
+
+      <!-- Primary Nav -->
+      <nav aria-label="Primary">
+        <ul class="menu">
+          <!-- INTERNAL LINKS (resolved with BASE) -->
+          <li><a class="internal" href="./index.html">Home</a></li>
+          <li><a class="internal" href="./initiative.html">Initiative Title &amp; Summary</a></li>
+          <li><a class="internal" href="./current-law.html">Current Law</a></li>
+          <li><a class="internal" href="./proposed-law.html">Proposed Law</a></li>
+          <li><a class="internal" href="./faqs.html">FAQs</a></li>
+          <!-- <li><a class="internal" href="./educational-resources.html">Educational Resources</a></li> -->
+          <li><a class="internal" href="./funding.html">Funding</a></li>
+          <li><a class="internal cta" href="./contact.html">Contact &amp; Find Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="content" role="main">
+    <div class="wrap" style="background-color:var(--c4);">
+      <h1 style="text-align: center">Proposed Law</h1>  
+
+<p>The People of the City of Berkeley ordain as follows: </p>
+<p><u>Section 1.</u>       That Chapter 12.90 of the Berkeley Municipal Code is amended to read as follows: </p>
+<strong>Chapter 12.90</strong>
+<p>NUCLEAR ENERGY AND PROHIBITION OF NUCLEAR WEAPONS ACT</p>
+
+<strong>Sections:</strong>
+<p style="margin-left: 20px;">12.90.010   Name.</p>
+<p style="margin-left: 20px;">12.90.020   Purpose.</p>
+<p style="margin-left: 20px;">12.90.030   Findings.</p>
+<p style="margin-left: 20px;">12.90.040   Prohibition of work for nuclear weapons.</p>
+<p style="margin-left: 20px;">12.90.050   Food irradiation plants and labelling.</p>
+<p style="margin-left: 20px;">12.90.060   Nuclear weapons free contracts and investments.</p>
+<p style="margin-left: 20px;">12.90.070   Community right to know.engagement.</p>
+<p style="margin-left: 20px;">12.90.080   Transportation and preparedness.</p>
+<p style="margin-left: 20px;">12.90.090   Removal of Ppublic notice of nuclear free zone.</p>
+<p style="margin-left: 20px;">12.90.100   Definitions.</p>
+<p style="margin-left: 20px;">12.90.110   Enforcement.</p>
+<p style="margin-left: 20px;">12.90.120   Severability clause.</p>
+
+<strong>12.90.010	Name.</strong>
+<p>This Chapter shall be known as "The Nuclear Energy and Prohibition of Nuclear Weapons Act."</p>
+
+<strong>12.90.020	Purpose.</strong>
+<p>The purpose of this act is to establish the City of Berkeley’s position on:</p>
+<p style="margin-left: 20px;">A.  Nuclear weapons, nonproliferation, and disarmament;</p>
+<p style="margin-left: 20px;">B.  Peaceful uses of nuclear energy, science, and technology.</p>
+
+<strong>12.90.030	Findings.</strong>
+<p>The people of Berkeley find that:</p>
+<p style="margin-left: 20px;">A.  On November 4, 1986, citizens of Berkley voted 29,097 to 14,447 to become a “Nuclear Free Zone”. The ordinance went into effect on December 19, 1986. In 1987, the Berkeley Research Reactor located in the University of California at Berkeley Etcheverry Hall was decommissioned.</p>
+<p style="margin-left: 20px;">B.  On November 24, 2003, the University of California’s Academic Council passed the “Academic Council on SUTI: Recommendations Regarding Sensitive but Unclassified Technical Information.” In this resolution, the Council emphasizes the importance of research that can be shared openly and published. For this reason, it states, “UC practice, in turn, has been to refuse to perform classified research on our campuses. This stems from UC’s longstanding policy that faculty research should be publishable. A contract or grant for research to be conducted on a UC Campus normally is unacceptable to the University if it limits the freedom to publish or disseminate results.” Since Lawrence Berkeley National Laboratory is operated by University of California, it also follows UC policy for research. Therefore, classified research is banned at all UC campuses and Lawrence Berkeley National Laboratory. Since classified work includes all work for nuclear weapons, it is unnecessary to restrict city contracts with or the hiring of consultants from either of these entities. If either entity decides to engage in work for nuclear weapons in the future, they will no longer be exempt and they will be subject to the contract restrictions set forth in this chapter. </p>
+<p style="margin-left: 20px;">C.  On July 7, 2017, 122 out of the 193 member states of the United Nations voted to adopt the Treaty on the Prohibition of Nuclear Weapons (TPNW). This international agreement is a “legally binding instrument to prohibit nuclear weapons, leading towards their total elimination.” The treaty entered force in January 2021. As of January 2024, no nuclear-weapon states, including the United States, have signed this agreement. However, this treaty demonstrates that the majority of nations believe that, as with chemical and biological weapons, nuclear weapons should be completely banned and eliminated. The People of the City of Berkeley believe that every nation should sign this treaty, including the United States, and eliminate all nuclear weapons. </p>
+<p style="margin-left: 20px;">D.  The TPNW emphasizes that nothing in the treaty shall be interpreted as affecting the inalienable right of treaty member states to develop research, production, and use of nuclear energy for peaceful purposes. This clause is adopted from nearly identical language from Article IV of the United Nations Treaty on the Non-Proliferation of Nuclear Weapons (NPT) regarding peaceful uses of nuclear energy.  </p>
+<p style="margin-left: 20px;">E.  The United States has contributed more than $395 million to International Atomic Energy Agency (IAEA) peaceful use programs since 2015, including $93 million for the Peaceful Uses Initiative and $23 million for the Rays for Hope initiative. Despite these investments, these initiatives remain significantly underfunded.  </p>
+<p style="margin-left: 20px;">F.  Since February 1988, the mayor of the City of Berkeley has been an active member of the organization Mayors For Peace. In 2021, The United States Conference of Mayors within the organization unanimously adopted a resolution titled, “Calling on the United States to Welcome the Treaty on the Prohibition of Nuclear Weapons and Act Now to Prevent Nuclear War and Eliminate Nuclear Weapons”. </p>
+<p style="margin-left: 20px;">G.  In 2014, the United Nations Intergovernmental Panel on Climate Change (IPCC) published peer-reviewed median values of the life-cycle carbon dioxide (CO2) equivalent emissions from various electricity generation sources. On average, electricity from nuclear energy produces the equivalent of 12 grams of CO2 per kilowatt-hour, the second lowest among technologies studied, behind only offshore wind (11 gCO2eq/kWh). Electricity from coal and natural gas supply technologies have the largest lifecycle equivalent emissions at 820 gCO2eq/kWh, and 490 gCO2eq/kWh, respectively. </p>
+<p style="margin-left: 20px;">H.  On December 2, 2023, at the 28th meeting of the Conference of Parties (COP 28) for the United Nations Framework Convention on Climate Change, 26 nations, including the United States, adopted a pledge to commit to tripling nuclear energy capacity from 2020 levels by 2050. The pledge recognized the key role of nuclear energy in achieving global net-zero greenhouse gas emissions / carbon neutrality by midcentury and the importance of the applications of nuclear science and technology that contribute to monitoring climate change and tackling its impacts.</p>
+<p style="margin-left: 20px;">I.  The People of the City of Berkeley recognize the peaceful uses of nuclear energy and that these peaceful uses, in conformance with NPT and TPNW, and paired with responsible regulation, are beneficial for environmental sustainability and for human health and prosperity.  </p>
+<strong>12.90.040	Prohibition of work for nuclear weapons.</strong>
+<p style="margin-left: 20px;">A.  Cessation of Present Activities. No person, corporation, university, laboratory, institution or other entity shall, within the City of Berkeley, knowingly engage in work for nuclear weapons. This prohibition shall take effect two years after adoption of this act.</p>
+<p style="margin-left: 20px;">B.  Prohibition of Commencement of Work for Nuclear Weapons. No person, corporation, university, laboratory, institution or other entity which is not, as of the date this act is adopted, engaged in work for nuclear weapons, shall, within the City of Berkeley, commence any such activities after the date this act is adopted.</p>
+<p style="margin-left: 20px;">C.  Nothing in this section shall be construed to prohibit the following:</p>
+<p style="margin-left: 40px;">1.  Any activity not specifically described in this section;</p>
+<p style="margin-left: 40px;">2.  Any unclassified research, study, evaluation or teaching;</p>
+<p style="margin-left: 40px;">3.  Any uses of radioactive material for peaceful purposes, including but not limited to: the research and application of nuclear medicine, including the production of medical isotopes; the production or use of radioactive materials or fissile material for non-proliferation research; the production of radioactive material for peaceful research and applications; nuclear energy; or uses of radioactive material for smoke detectors, light emitting watches and clocks, and other applications not related to the development of nuclear weapons. (Ord. 5784-NS § 4, 1986)</p>
+
+<strong>12.90.050	Food irradiation plants and labelling.</strong>
+<p style="margin-left: 20px;">A.  No facility using radioactive isotopes for the purpose of irradiating food intended for human consumption shall be constructed or operated within the City of Berkeley.</p>
+<p style="margin-left: 20px;">B.  Any food intended for human consumption that has been irradiated in such a facility, or by any similar facility using X-ray radiation, and is intended for sale within Berkeley shall be prominently labelled "Treated With Ionizing Radiation." (Ord. 5784-NS § 6, 1986)</p>
+<strong>12.90.060	Nuclear weapons free contracts and investments.</strong>
+<p style="margin-left: 20px;">A.  <i>Contracts.</i> The City of Berkeley shall grant no contract to any person or business which knowingly contributes to nuclear weapons development, unless the City Council makes a specific determination that no reasonable alternative exists, taking into consideration the following factors:</p>
+<p style="margin-left: 40px;">1.  The intent and purpose of the act;</p>
+<p style="margin-left: 40px;">2.  The availability of alternative services, goods and equipment, or other supplies substantially meeting required specifications of the proposed contract; and,</p>
+<p style="margin-left: 40px;">3.  Quantifiable additional costs resulting from use of available alternatives.</p>
+<p>This does not prevent the hiring of scientists and consultants who could provide the City with useful knowledge and help in regards to energy, energy production, energy procurement, climate change mitigation, weapons non-proliferation, nuclear medicine, and city planning, as long as their primary work is not work for nuclear weapons. </p>
+
+<p style="margin-left: 20px;">B.  <i>Investments.</i> The City of Berkeley shall refrain from knowingly making any investments directly in entities whose primary purpose is work for nuclear weapons</p>
+
+<p style="margin-left: 20px;">C.  <i>Exception for Non-Proliferation.</i> Because nuclear material is necessary to study and develop new methods for monitoring for nuclear weapons development and accomplishing non-proliferation, the City is not prohibited by this Chapter from contracting with and/or making investments in any entity that uses nuclear material for the sole purpose of stopping the spread of nuclear weapons and/or further development of nuclear weapons. This includes, as long as they do not recommence work for nuclear weapons: </p>
+<p style="margin-left: 40px;">1.	Lawrence Berkeley National Laboratory </p>
+<p style="margin-left: 40px;">2.	University of California at Berkeley </p>
+
+<strong>12.90.070  	Community engagement.</strong>
+<p>The City, through its own agencies and in cooperation with other local governmental agencies and educational organizations and interested citizen groups, shall assist and promote educational activities including but not limited to curriculum in all public schools and adult education programs, to advance public awareness and understanding on the history and current facts about nuclear weapons, radiation science and radiological technology, civilian nuclear energy, and any current research practices in all related matters. For the purposes of education, the City shall support representation from the relevant scientific community for all education work.  </p>
+
+<strong>12.90.080		Transportation and preparedness.</strong>
+<p>The transportation of medical isotopes, peaceful nuclear energy related components, and nuclear fuel, in the interest of the public safety, shall be subject to United States Environmental Protection Agency (EPA), United States Department of Energy (DOE), and United States Nuclear Regulatory Commission (NRC) regulations. The transportation shall be subjected to the following controls:</p>
+<p style="margin-left: 20px;">A.  For each shipment of radioactive material, the operators must comply with the relevant transportation safety and transportation security regulations.</p>
+<p style="margin-left: 20px;">B.  Public notice shall be given to the route and means of transport of radioactive material prior to shipment, provided that security and safety are not compromised. If timely public notice of the shipment cannot be reasonably accommodated, a majority of the City Council shall be duly informed of the shipment by the operators and regulating agencies prior to the shipment. </p>
+<p>The Berkeley Fire Department shall, at a minimum, properly equip all members of one fire engine crew with radiation detection equipment and personal protection equipment (personal dosimeter and effective CRBN respiratory devices) to allow for appropriate response and assessment in the case of an incident involving nuclear material that occurs within the City of Berkeley, or to assist partner agencies in the San Francisco Bay area with such an incident.  Radiation incident response preparedness and equipment testing shall be conducted biennially, or more periodically, as directed, evaluated, and documented by the City Fire Marshall. </p>
+
+<strong>12.90.090	Removal of Public public notice of prior nuclear free zone.</strong>
+<p>The previous passage of this act established that every road entering the City of Berkeley would mark the City limits with a sign reading "Nuclear Free Zone", established by City of Berkeley initiative ordinance, 1986. These signs shall be removed no later than March 1, 20275. A minimum of one sign shall be salvaged and donated to the Berkeley Historical Society and Museum.</p>
+
+<strong>12.90.100	Redirection of resources toward human needs.</strong>
+<p>The City of Berkeley Peace and Justice Commission shall solicit testimony from the public and shall prepare a detailed plan for the conversion of labor, resources and physical plants to peaceful and productive uses. This peace conversion plan shall be completed within two years of the adoption of this act. The commission shall ensure the participation of organized labor. (Ord. 5784-NS § 12, 1986)</p>
+<strong>12.90.110	Definitions.</strong>
+<p style="margin-left: 20px;">"Nuclear weapon" is any device, the intended explosion of which results from the energy released by reactions involving atomic nuclei, either fission or fusion, or both. This definition of nuclear weapons includes the means of transporting, guiding, propelling or triggering the weapon if and only if such means is destroyed or rendered useless in the normal propelling, triggering, or detonation of the weapon.</p>
+<p style="margin-left: 20px;">"Component of a nuclear weapon" is any device, radioactive or non-radioactive, the primary intended function of which is to contribute to the operation of a nuclear weapon or to be a part of a nuclear weapon.</p>
+<p style="margin-left: 20px;">"Work for nuclear weapons" is any work the purpose of which is the development, testing, production, maintenance or storage of nuclear weapons or the components of nuclear weapons; or any secret or classified research or evaluation of nuclear weapons; or any operation, management, or administration of such work.</p>
+<p style="margin-left: 20px;">"Nuclear reactor" is any device, the purpose of which is to release energy from non-explosive reactions involving the fission of atomic nuclei. (Ord. 5784-NS § 13, 1986)</p>
+<p style="margin-left: 20px;">“Non-proliferation” refers to the efforts to control or prevent the spread of nuclear weapons and the means to make them. </p>
+<p style="margin-left: 20px;">“Fissile material” is any material in which the atomic nuclei readily undergo fission. </p>
+<p style="margin-left: 20px;">“Weapons-grade fissile material” is fissile material that is pure enough or has properties that make it suitable to be used in making nuclear weapons. </p>
+<p style="margin-left: 20px;">“Radioactive Waste” or “Nuclear Waste” is a byproduct from nuclear reactors, fuel processing plants, hospitals and research facilities. Radioactive waste is also generated while decommissioning and dismantling nuclear reactors and other nuclear facilities. There are two broad classifications: high-level or low-level waste. High-level waste is primarily spent fuel removed from reactors after producing electricity. Low-level waste comes from reactor operations and from medical, academic, industrial, and other commercial uses of radioactive materials.</p>
+
+<strong>12.90.120		Enforcement.</strong>
+<p>Each violation of this act shall be punishable by up to thirty days imprisonment and a five hundred dollar fine. Each day shall be deemed a separate violation.</p>
+<p>The City of Berkeley shall also have the right to enforce this act by appropriate civil actions for declaratory or injunctive relief. Reasonable attorney’s fees and court costs shall be awarded to prevailing plaintiff in such litigation. (Ord. 5784-NS § 14, 1986)</p>
+
+<strong>12.90.130		 Severability clause.</strong>
+<p>If any word, phrase, sentence, part, section, subsection, or other portion of this title, which constitutes the Nuclear Energy and Prohibition of Nuclear Weapons Act, or any application thereof to any person or circumstance is declared void, unconstitutional, or invalid for any reason, then such word, phrase, sentence, part, section, subsection, or other portion, or the prescribed application thereof, shall be severable, and the remaining provisions of this chapter, an all applications thereof, not having been declared void, unconstitutional or invalid, shall remain in full force and effect. The People of the City of Berkeley hereby declare that it would have passed this title, and each section, subsection, sentence, clause and phrase thereof, irrespective of the fact that any one or more section, subsections, sentences, clauses, or phrases had been declared invalid or unconstitutional. </p>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p>
+        Paid for by
+        <u><a class="internal" href="./funding.html">
+          Committee for the Initiative to Amend the Nuclear Free Berkeley Act
+        </a></u><br>
+        FPPC Committee ID – <a href="https://public.netfile.com/pub2/?aid=BRK" rel="noopener">1483734</a> (Not Yet Qualified)<br>
+        <a href="mailto:petition@niceucb.com">petition@niceucb.com</a>
+        <!--<a href="mailto:petition@berkeleyamend.com">petition@berkeleyamend.com</a>-->
+      </p>
+
+      <!-- Optional external social link (kept external as requested)
+      <p><a href="https://twitter.com/BerkeleyAmend" rel="noopener">Twitter/X</a></p>
+      -->
+    </div>
+  </footer>
+
+</body>
+</html>

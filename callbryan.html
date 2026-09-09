@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Call Asm. Bryan — Support AB 2647</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #111;
+      background: #f2f0f7;
+      padding: 16px 12px;
+    }
+
+    .page {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: rebeccapurple;
+      color: white;
+      border-radius: 14px;
+      padding: 26px 20px 22px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .deadline-badge {
+      display: inline-block;
+      background: #ff5a1f;
+      color: white;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .header p {
+      font-size: 0.93rem;
+      opacity: 0.88;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+    }
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: rebeccapurple;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      background: rebeccapurple;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    /* ── Buttons ── */
+    .call-btn {
+      display: block;
+      text-decoration: none;
+      background: rebeccapurple;
+      color: white;
+      text-align: center;
+      padding: 17px 16px 15px;
+      border-radius: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .call-btn:hover, .call-btn:active { background: #4e2587; }
+    .call-btn .btn-sub {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-top: 3px;
+      letter-spacing: 0;
+    }
+
+    .email-btn {
+      display: block;
+      text-decoration: none;
+      background: #ede8f8;
+      color: rebeccapurple;
+      text-align: center;
+      padding: 14px 14px;
+      border-radius: 10px;
+      font-size: 0.97rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+    .email-btn:hover { background: #ddd5f5; }
+
+    .note {
+      font-size: 0.84rem;
+      color: #555;
+      margin-top: 6px;
+    }
+    .note a { color: rebeccapurple; }
+
+    /* ── Script accordion ── */
+    details {
+      border: 2px solid #ddd4f5;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      padding: 15px 16px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: rebeccapurple;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "▼";
+      font-size: 0.75rem;
+      transition: transform 0.18s;
+      opacity: 0.7;
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+    details[open] summary::after { transform: rotate(180deg); }
+
+    .script-body {
+      padding: 4px 0 0;
+    }
+    details .script-body {
+      padding: 0 18px 18px;
+      border-top: 1px solid #ddd4f5;
+    }
+    .script-body p {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #1a1a1a;
+    }
+    .fill {
+      background: #fff4c2;
+      padding: 0 4px;
+      border-radius: 3px;
+      font-style: italic;
+    }
+    .script-tip {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      font-size: 0.82rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    /* ── Links ── */
+    .links-list {
+      list-style: none;
+      margin-top: 2px;
+    }
+    .links-list li {
+      border-bottom: 1px solid #f0ecfb;
+      padding: 8px 0;
+    }
+    .links-list li:last-child { border-bottom: none; }
+    .links-list a {
+      color: rebeccapurple;
+      font-size: 0.93rem;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 20px;
+      padding-bottom: 36px;
+    }
+    footer a { color: rebeccapurple; text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="deadline-badge">Hearing: Monday, April 13th</div>
+    <h1>Call Asm. Bryan —<br>Support AB 2647</h1>
+    <p>Assemblymember Isaac Bryan chairs the Natural Resources Committee, which will vote on AB&nbsp;2647 this Monday. Calls from 55th District constituents carry the most weight.</p>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="card">
+    <h2><span class="step-num">1</span> Call the Capitol — call this one first</h2>
+    <a class="call-btn" href="tel:9163192055">
+      (916) 319-2055
+      <span class="btn-sub">Sacramento — reaches committee staff directly</span>
+    </a>
+    <p class="note">This number routes to the Natural Resources Committee staff who track the bill. It is the highest-impact call you can make.</p>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="card">
+    <h2><span class="step-num">2</span> Call the District Office</h2>
+    <a class="call-btn" href="tel:3106415410">
+      (310) 641-5410
+      <span class="btn-sub">LA District Office — best for 55th District residents</span>
+    </a>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="card">
+    <h2><span class="step-num">3</span> Send an Email</h2>
+    <a class="email-btn" href="mailto:assemblymember.bryan@assembly.ca.gov">
+      assemblymember.bryan@assembly.ca.gov
+    </a>
+    <p class="note">
+      For a more direct line, you can also reach Chief of Staff <strong>Caleb Rabinowitz</strong> at
+      <a href="mailto:caleb.rabinowitz@asm.ca.gov">caleb.rabinowitz@asm.ca.gov</a>.
+    </p>
+  </div>
+
+  <!-- Script -->
+  <div class="card">
+    <h2>Suggested Call Script</h2>
+    <p class="script-tip">Read naturally — you don't have to use every word. Saying you're a 55th District constituent is the most important thing.</p>
+
+    <div class="script-body">
+      <p>"Hi, my name is <span class="fill">[your name]</span> and I'm a constituent in the 55th District.</p>
+
+      <p>I'm calling to ask Assemblymember Bryan to support AB 2647, which modernizes California's nuclear moratorium to allow advanced reactors — and I think this is actually a powerful energy justice issue for our communities.</p>
+
+      <p>Working families here already face some of the highest electricity bills in the state, and when heat emergencies hit South LA, grid reliability becomes a matter of life and death. Advanced nuclear provides the firm, carbon-free power that complements our solar and wind and helps protect the people who need it most.</p>
+
+      <p>I also want to address the concerns around safety and waste directly, because science has answered those questions. Nuclear has an outstanding safety record, spent fuel is stored safely and securely, and the NRC's rigorous independent oversight gives nuclear one of the strongest regulatory cultures of any industry in the world. It's a model for how energy and industry can be governed effectively.</p>
+
+      <p>On the cost of nuclear energy, California has been here before. When we partnered with New York and New Jersey to scale solar and battery storage, we drove prices down dramatically through coordinated demand. We can do the same for advanced nuclear now that New York, New Jersey, and other progressive states are lifting their moratoria. California helped make clean energy affordable once. We can do it again.</p>
+
+      <p>AB 2647 doesn't mandate anything — it just makes sure we have every tool available as we work toward 2045. I'd ask Assemblymember Bryan to support this bill at the Natural Resources Committee hearing this Monday, April 13th.</p>
+
+      <p>Thank you."</p>
+    </div>
+
+    <details style="margin-top: 16px;">
+      <summary>Additional talking points</summary>
+      <div class="script-body">
+        <p><strong>On what the bill actually does:</strong> AB 2647 doesn't authorize any specific plant or override local control. It simply removes the blanket prohibition on advanced reactors — those with NRC design licenses issued after January 1, 2005 — so California isn't the only major state that categorically bans them before any project even applies.</p>
+
+        <p><strong>On energy justice and South LA specifically:</strong> The 55th District includes neighborhoods that already experience disproportionate air quality burdens from gas peaker plants that run hardest on the hottest days. Firm zero-carbon power reduces the need for those peakers. This is an environmental justice argument for nuclear, not against it.</p>
+
+        <p><strong>On the moratorium's age:</strong> California's nuclear moratorium was passed in 1976 — before the NRC's current regulatory framework, before passive safety systems, before small modular reactor designs. The technology it banned no longer resembles what's being proposed today.</p>
+
+        <p><strong>On other progressive states:</strong> New York, New Jersey, Minnesota, and Illinois have all either lifted nuclear moratoria or passed legislation supporting nuclear as part of their clean energy standards. California is increasingly isolated among climate-leading states on this issue.</p>
+
+        <p><strong>On grid reliability:</strong> California's grid operator (CAISO) has flagged reliability concerns for summer peaks through at least 2030. Advanced nuclear is one of the few zero-carbon sources that can provide baseload and dispatchable power regardless of weather or time of day.</p>
+
+        <p><strong>On nuclear waste:</strong> All of the used nuclear fuel ever produced in the United States — over 60 years — would fit on a single football field stacked about 10 yards deep. It is solid, not liquid, and is stored in dry casks with an excellent safety record. Compare this to the CO₂ already in the atmosphere.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Learn More -->
+  <div class="card">
+    <h2>Learn More</h2>
+    <ul class="links-list">
+      <li>
+        <a href="https://calderon.asmdc.org/press-releases/20260223-calderon-legislation-seeks-modernize-californias-nuclear-moratorium" target="_blank" rel="noopener">
+          Asm. Calderon's press release on AB 2647
+        </a>
+      </li>
+      <li>
+        <a href="https://calmatters.digitaldemocracy.org/bills/ca_202520260ab2647" target="_blank" rel="noopener">
+          Bill status — CalMatters Digital Democracy
+        </a>
+      </li>
+      <li>
+        <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2647" target="_blank" rel="noopener">
+          Full bill text — California Legislature
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    A resource from <a href="https://conradbuck.github.io/nice-club/">NiCE Club @ UC Berkeley</a>
+  </footer>
+
+</div>
+</body>
+</html>
